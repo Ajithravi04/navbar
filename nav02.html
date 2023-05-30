@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(67, 114, 202);
+            font-weight: 600;
+            padding: 15px 100px 15px 20px;
+        }
+        .list{
+            display: flex;
+            justify-content:space-between ;
+            gap: 25px;
+            font-size: 20px;
+        }
+        #menu:checked ~.menuIcon{
+            color:rgb(255, 0, 0) ;
+            
+          
+        }
+        .inputMenu:checked ~ .list{
+            left: 0;
+        }
+    @media screen and (min-width: 801px){
+        
+        .menuIcon{
+            display: none;
+        }
+        #menu{
+            display: none;
+        }
+       
+    }   
+
+    @media screen and (min-width: 300px) and (max-width:800px) {
+        .list{
+            position: fixed;
+            background-color: rgb(156, 180, 224);
+            left: -100%;
+            top: 57px;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        input{
+            display: none;
+        }
+        .inputmenu:checked ~ .list{
+            left:0;
+        }
+        
+    }
+
+
+        
+    </style>
+</head>
+<body>
+     <div class="container">
+          
+            <h2>Navbar</h2>
+    
+        <input type="checkbox" id="menu" class="inputMenu">
+        <label for="menu" class="menuIcon"> <i class="fa-solid fa-bars"></i> </label>
+
+
+        <div class="list">
+            <p> Home </p>
+            <p> About </p>
+            <p> Service </p>
+            <p> Contact </p>
+        </div>
+
+
+     </div>
+</body>
+</html>
